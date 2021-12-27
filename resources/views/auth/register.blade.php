@@ -41,6 +41,22 @@
                                 </span>
                             @enderror
                         </div>
+
+                        <div class="md-form">
+                            <i class="fa fa-user prefix white-text active"></i>
+                            <input type="text" id="form3"
+                                   class="white-text form-control @error('matric_no') is-invalid @enderror"
+                                   required value="{{ old('matric_no') }}" autocomplete="name"
+                                   name="matric_no"
+                            >
+                            <label for="form3" class="active">Your Matric Number</label>
+                            @error('matric_no')
+                            <span class="invalid-feedback pl-5" role="alert" style="fontsize: 1em">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
                         <div class="md-form">
                             <i class="fa fa-envelope prefix white-text active"></i>
                             <input type="text" name="email"  required value="{{ old('email') }}"

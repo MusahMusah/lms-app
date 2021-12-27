@@ -12,49 +12,25 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="{{ asset("css/mdb.min.css") }}"  rel="stylesheet">
+    <link href="{{ asset("css/mdb.min.css") }}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="{{ asset("css/style.min.css") }}"  rel="stylesheet">
+    <link href="{{ asset("css/style.min.css") }}" rel="stylesheet">
 
     <style>
-        html,
-        body,
-        header,
-        .view {
-            /*height: 100%;*/
-        }
-
-        @media (max-width: 740px) {
-
-            html,
-            body,
-            header,
-            .view {
-                /*height: 1000px;*/
-            }
-        }
-
-        @media (min-width: 800px) and (max-width: 850px) {
-
-            html,
-            body,
-            header,
-            .view {
-                height: 650px;
-            }
-        }
-
         .top-nav-collapse {
             background-color: #3f51b5 !important;
+            color: white;
         }
 
         .navbar:not(.top-nav-collapse) {
             background: transparent !important;
+            color: white;
         }
 
         @media (max-width: 991px) {
             .navbar:not(.top-nav-collapse) {
                 background: #3f51b5 !important;
+                color: white !important;
             }
         }
 
@@ -77,10 +53,9 @@
 </head>
 <body>
 
-    <!-- Main navigation -->
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top scrolling-navbar">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <strong>MDB</strong>
@@ -111,21 +86,12 @@
             </div>
         </nav>
         <!-- Navbar -->
-        <!-- Full Page Intro -->
-        <div class="view" style="background-image: url('http://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-            <!-- Mask & flexbox options-->
-            <div class="mas rgba-gradient d-flex justify-content-center align-items-center">
-                <!-- Content -->
-                <div class="container" style="margin: 5rem 0;">
-                    @yield('content')
-                </div>
-                <!-- Content -->
-            </div>
-            <!-- Mask & flexbox options-->
-        </div>
-        <!-- Full Page Intro -->
     </header>
-    <!-- Main navigation -->
+
+    <main class="container" style="margin-top: 5rem !important;">
+        @yield('content')
+    </main>
+
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
@@ -138,8 +104,8 @@
     <script type="text/javascript" src="{{ asset('js/mdb.min.js') }}"></script>
     <!-- Initializations -->
     <script type="text/javascript">
-        // Animations initialization
-        new WOW().init();
+    // Animations initialization
+    new WOW().init();
     </script>
 </body>
 </html>
