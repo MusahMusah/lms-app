@@ -84,8 +84,10 @@
 <!--Main Navigation-->
 
 <!--Main layout-->
-<main class="my-5">
-    @yield('content')
+<main style="margin: 5rem">
+    <div class="container">
+        @yield('content')
+    </div>
 </main>
 <!--Main layout-->
 

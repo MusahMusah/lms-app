@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\FacultyController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,5 +15,11 @@ Route::group(['middleware' => 'sanctum'], function () {
 });
 
 Route::group(['prefix' => 'faculty'], function () {
-    Route::get('/', [FacultyController::class, 'index']);
+    Route::get('/', [FacultyController::class, 'index'])->name('faculty.index');
+    Route::get('/{faculty}', [FacultyController::class, 'show'])->name('faculty.show');
+});
+
+Route::group(['prefix' => 'department'], function () {
+    Route::get('/', [DepartmentController::class, 'index'])->name('department.index');
+    Route::get('/{department}', [DepartmentController::class, 'show'])->name('department.show');
 });

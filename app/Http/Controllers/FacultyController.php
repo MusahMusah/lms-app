@@ -49,7 +49,13 @@ class FacultyController extends Controller
      */
     public function show(Faculty $faculty)
     {
-        //
+        // call relationship
+        $faculty->load('departments');
+        // call department relationship child
+//        $faculty->departments->load('courses');
+        return view('faculty.show', [
+            'faculty' => $faculty
+        ]);
     }
 
     /**
