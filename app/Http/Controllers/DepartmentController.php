@@ -8,15 +8,6 @@ use App\Http\Requests\UpdateDepartmentRequest;
 
 class DepartmentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -47,7 +38,9 @@ class DepartmentController extends Controller
      */
     public function show(Department $department)
     {
-        //
+        // load courses related to the department
+        $department->load('courses');
+        return view('department.show', compact('department'));
     }
 
     /**

@@ -85,7 +85,7 @@
 
 <!--Main layout-->
 <main style="margin: 5rem">
-    <div class="container">
+    <div class="container-fluid">
         @yield('content')
     </div>
 </main>

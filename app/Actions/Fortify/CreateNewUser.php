@@ -42,6 +42,7 @@ class CreateNewUser implements CreatesNewUsers
 
         // Add student record to database
         Student::create([
+            'user_id' => $user->id,
             'matric_no' => $input['matric_no'],
         ]);
 
