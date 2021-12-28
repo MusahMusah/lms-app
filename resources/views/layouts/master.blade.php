@@ -41,39 +41,53 @@
             <div class="collapse navbar-collapse" id="navbarExample01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="#intro">Home</a>
+                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" aria-current="page"
+                           href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
-                           target="_blank">Learn Bootstrap 5</a>
+                        <a class="nav-link {{ request()->routeIs('faculty.index') ? 'active' : '' }}"
+                           href="{{route('faculty.index')}}" rel="nofollow">
+                            Faculty
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Download MDB UI KIT</a>
+                        <a class="nav-link" href="{{ request()->routeIs('courses.index') ? 'active' : '' }}">
+                            Courses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ request()->routeIs('department.index') ? 'active' : '' }}">
+                            Departments
+                        </a>
                     </li>
                 </ul>
 
                 <ul class="navbar-nav d-flex flex-row">
-                    <!-- Icons -->
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
-                           target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
+                    <li class="nav-item" style="margin-right: 3rem">
+                       <div class="dropdown">
+                           <a
+                               class="dropdown-toggle"
+                               type="button"
+                               id="dropdownMenuButton"
+                               data-mdb-toggle="dropdown"
+                               aria-expanded="false"
+                           >
+                               My Account
+                           </a>
+                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                               <li><a class="dropdown-item" href="#">My profile</a></li>
+                               <li><a class="dropdown-item" href="#">Settings</a></li>
+                               <li>
+                                   <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                       <i class="mr-50" data-feather="power"></i> {{ __('Logout') }}
+                                       <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                                           @csrf
+                                       </form>
+                                   </a>
+                               </li>
+                           </ul>
+                       </div>
                     </li>
                 </ul>
             </div>
@@ -98,7 +112,7 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
+        © {{date('Y')}} Copyright:
         <a class="text-dark" href="{{route('home')}}">
             <strong>{{config('app.name')}}</strong>
         </a>

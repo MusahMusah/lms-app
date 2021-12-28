@@ -4,12 +4,8 @@
     <section>
         <!-- Jumbotron -->
         <div id="intro" class="p-5 text-center bg-light shadow-5 rounded mb-5">
-            <h1 class="mb-3 h2">Learn Bootstrap 5 with MDB</h1>
+            <h1 class="mb-3 h2">All Available Faculties Of (CDL)</h1>
             <p class="mb-3">Best & free guide of responsive web design</p>
-            <a class="btn btn-primary m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button" rel="nofollow"
-               target="_blank">Start tutorial</a>
-            <a class="btn btn-primary m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
-               role="button">Download MDB UI KIT</a>
         </div>
         <!-- Jumbotron -->
     </section>
@@ -48,17 +44,18 @@
     <!-- Pagination -->
     <nav class="my-4" aria-label="...">
         <ul class="pagination pagination-circle justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active" aria-current="page">
-                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
+{{--            <li class="page-item">--}}
+{{--                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>--}}
+{{--            </li>--}}
+{{--            <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+{{--            <li class="page-item active" aria-current="page">--}}
+{{--                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>--}}
+{{--            </li>--}}
+{{--            <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+{{--            <li class="page-item">--}}
+{{--                <a class="page-link" href="#">Next</a>--}}
+{{--            </li>--}}
+            {{ $faculties->links() }}
         </ul>
     </nav>
 @endsection

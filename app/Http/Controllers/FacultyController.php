@@ -52,7 +52,9 @@ class FacultyController extends Controller
         // call relationship
         $faculty->load('departments');
         // call department relationship child
-//        $faculty->departments->load('courses');
+        // paginate is used to show only 6 departments
+        $faculty->departments->load('courses')->take(2);
+//        $faculty->departments()->paginate(6);
         return view('faculty.show', [
             'faculty' => $faculty
         ]);
